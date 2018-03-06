@@ -5,6 +5,7 @@ import AppBar from 'material-ui/AppBar'
 import FontIcon from 'material-ui/FontIcon'
 
 import List from './components/ToDoList'
+import AddButton from './components/AddButton'
 
 const View = props => <div id='main-container' className='centered'>
   <AppBar
@@ -14,6 +15,7 @@ const View = props => <div id='main-container' className='centered'>
   <List list={props.todos}
     onCheck={props.onCheck}
   />
+  <AddButton />
 </div>
 
 export default View
