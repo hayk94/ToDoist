@@ -17,6 +17,7 @@ const View = props => <div id='main-container' className='centered'>
     onCheck={props.onCheck}
     onTextChange={props.onTextChange}
     getFirstInputRef={props.getFirstInputRef}
+    onRemove={props.onRemove}
   />
   <AddButton onClick={props.onAddButtonClick} />
 </div>
@@ -29,4 +30,5 @@ View.propTypes = {
   onTextChange: PropTypes.func.isRequired,
   onAddButtonClick: PropTypes.func.isRequired,
   getFirstInputRef: PropTypes.func.isRequired,
+  onRemove: PropTypes.func.isRequired
 }

@@ -11,7 +11,9 @@ import { RIEInput } from 'riek'
 
 const Item = props => <div>
   <ListItem
-    rightIconButton={<IconButton touch>
+    rightIconButton={<IconButton
+      onClick={() => props.onRemove(props._id)}
+      touch>
       <FontIcon className='material-icons'>delete</FontIcon>
     </IconButton>}
     className='todo-item'
@@ -34,4 +36,5 @@ Item.propTypes = {
   onCheck: PropTypes.func.isRequired,
   onTextChange: PropTypes.func.isRequired,
   ref: PropTypes.func,
+  onRemove: PropTypes.func.isRequired
 }

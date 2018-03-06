@@ -63,6 +63,10 @@ class Container extends Component {
 
   // // //
 
+  onRemove = (_id) => this.setState({
+    todos: this.state.todos.filter(todo => todo._id !== _id)
+  })
+
   onTextChange = (_id, text) => {
     const { todos } = this.state
     const item = todos.find(todo => todo._id === _id)
@@ -88,6 +92,7 @@ class Container extends Component {
   render () {
     return (
       <View
+        onRemove={this.onRemove}
         getFirstInputRef={this.getFirstInputRef}
         onAddButtonClick={this.onAddButtonClick}
         onTextChange={this.onTextChange}
