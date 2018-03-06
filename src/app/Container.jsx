@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
+import View from './View'
+
 class Container extends Component {
   render () {
     return (
-      <div>CONTAINER</div>
+      <View />
     )
   }
 }
