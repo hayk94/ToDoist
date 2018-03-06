@@ -16,6 +16,7 @@ const Item = props => <div>
     </IconButton>}
     className='todo-item'
     primaryText={<RIEInput
+      ref={props.getRef}
       value={props.text}
       change={({text}) => props.onTextChange(props._id, text)}
       propName='text'
@@ -31,5 +32,6 @@ Item.propTypes = {
   text: PropTypes.string,
   done: PropTypes.bool,
   onCheck: PropTypes.func.isRequired,
-  onTextChange: PropTypes.func.isRequired
+  onTextChange: PropTypes.func.isRequired,
+  ref: PropTypes.func,
 }

@@ -16,8 +16,9 @@ const View = props => <div id='main-container' className='centered'>
     list={props.todos}
     onCheck={props.onCheck}
     onTextChange={props.onTextChange}
+    getFirstInputRef={props.getFirstInputRef}
   />
-  <AddButton />
+  <AddButton onClick={props.onAddButtonClick} />
 </div>
 
 export default View
@@ -25,5 +26,7 @@ export default View
 View.propTypes = {
   todos: PropTypes.array,
   onCheck: PropTypes.func.isRequired,
-  onTextChange: PropTypes.func.isRequired
+  onTextChange: PropTypes.func.isRequired,
+  onAddButtonClick: PropTypes.func.isRequired,
+  getFirstInputRef: PropTypes.func.isRequired,
 }

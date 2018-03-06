@@ -4,6 +4,8 @@ import View from './View'
 
 import { insertAt } from '../functions'
 
+import randomstring from 'randomstring'
+
 class Container extends Component {
   state = {
     todos: [
@@ -24,6 +26,42 @@ class Container extends Component {
       }
     ]
   }
+
+  // NOTE: When adding new items
+  // new element is inserted into the state todos at index 0
+  // component updates and we focus to edit the new todo
+  firstInputRef = null
+
+  getFirstInputRef = index => {
+    if (index == 0) return elem => this.firstInputRef = elem
+    return null
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+     if (this.firstInputRef) {
+       if (prevState.todos.length < this.state.todos.length) {
+         console.log('focus!', this.firstInputRef)
+         this.firstInputRef.startEditing()
+       }
+     }
+  }
+
+  onAddButtonClick = () => {
+    console.log('click')
+    this.addNewToDo()
+  }
+
+  addNewToDo = () => {
+    const todo = {
+      _id: randomstring.generate(7),
+      text: 'What do you want to do?',
+      done: false
+    }
+    const todos = insertAt(this.state.todos, 0, todo)
+    this.setState({ todos })
+  }
+
+  // // //
 
   onTextChange = (_id, text) => {
     const { todos } = this.state
@@ -50,6 +88,8 @@ class Container extends Component {
   render () {
     return (
       <View
+        getFirstInputRef={this.getFirstInputRef}
+        onAddButtonClick={this.onAddButtonClick}
         onTextChange={this.onTextChange}
         onCheck={this.onCheck}
         todos={this.state.todos}
