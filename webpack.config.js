@@ -7,7 +7,7 @@ const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin')
 const config = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, './docs'),
     filename: './output.js'
   },
   resolve: {
@@ -67,7 +67,7 @@ const config = {
     new ExtractTextWebpackPlugin('styles.css')
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, './public'), // a directory or URL to serve HTML from
+    contentBase: path.resolve(__dirname, './docs'), // a directory or URL to serve HTML from
     historyApiFallback: true, // fallback to /index.html for single page applications
     inline: true, // inline mode, (set false to disable including client scripts (like live reload))
     open: true // open default browser while launching
