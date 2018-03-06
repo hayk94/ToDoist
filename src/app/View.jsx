@@ -12,8 +12,10 @@ const View = props => <div id='main-container' className='centered'>
     title='ToDoist'
     iconElementLeft={<FontIcon className='material-icons'>check_circle</FontIcon>}
   />
-  <List list={props.todos}
+  <List
+    list={props.todos}
     onCheck={props.onCheck}
+    onTextChange={props.onTextChange}
   />
   <AddButton />
 </div>
@@ -23,4 +25,5 @@ export default View
 View.propTypes = {
   todos: PropTypes.array,
   onCheck: PropTypes.func.isRequired,
+  onTextChange: PropTypes.func.isRequired
 }

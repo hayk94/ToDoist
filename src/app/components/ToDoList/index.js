@@ -13,12 +13,15 @@ const ToDoList = props => <div id='list-container' className='centered'>
       text={item.text}
       done={item.done}
       onCheck={props.onCheck}
-     />)}
+      onTextChange={props.onTextChange}
+    />)}
   </List>
 </div>
 
 export default ToDoList
 
 ToDoList.propTypes = {
-  list: PropTypes.array
+  list: PropTypes.array,
+  onCheck: PropTypes.func.isRequired,
+  onTextChange: PropTypes.func.isRequired
 }
