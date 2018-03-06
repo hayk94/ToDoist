@@ -23,9 +23,22 @@ class Container extends Component {
     ]
   }
 
+  onCheck = (_id, checked) => {
+    const item = this.state.todos.find(todo => todo._id === _id)
+    item.done = checked
+    const newList = this.state.todos.filter(todo => todo._id !== _id)
+    let todos = [item, ...newList]
+    if (checked) {
+      // items mark as done go to the bottom of the list
+      todos = [...newList, item]
+    }
+    this.setState({todos})
+  }
+
   render () {
     return (
       <View
+        onCheck={this.onCheck}
         todos={this.state.todos}
       />
     )

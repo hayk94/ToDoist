@@ -12,6 +12,7 @@ const ToDoList = props => <div id='list-container' className='centered'>
       key={item._id}
       text={item.text}
       done={item.done}
+      onCheck={props.onCheck}
      />)}
   </List>
 </div>

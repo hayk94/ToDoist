@@ -14,7 +14,7 @@ const Item = props => <div>
     </IconButton>}
     className='todo-item'
     primaryText={props.text}
-    leftCheckbox={<Checkbox checked={props.done} />} />
+    leftCheckbox={<Checkbox checked={props.done} onCheck={(event, checked) => props.onCheck(props._id, checked)} />} />
   <Divider />
 </div>
 
@@ -23,5 +23,6 @@ export default Item
 Item.propTypes = {
   _id: PropTypes.string,
   text: PropTypes.string,
-  done: PropTypes.bool
+  done: PropTypes.bool,
+  onCheck: PropTypes.func.isRequired
 }
