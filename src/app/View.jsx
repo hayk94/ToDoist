@@ -11,10 +11,11 @@ const View = props => <div id='main-container' className='centered'>
     title='ToDoist'
     iconElementLeft={<FontIcon className='material-icons'>check_circle</FontIcon>}
   />
-  <List />
+  <List list={props.todos} />
 </div>
 
 export default View
 
 View.propTypes = {
+  todos: PropTypes.array
 }

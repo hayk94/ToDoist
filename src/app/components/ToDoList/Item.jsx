@@ -13,11 +13,15 @@ const Item = props => <div>
       <FontIcon className='material-icons'>delete</FontIcon>
     </IconButton>}
     className='todo-item'
-    primaryText='Notifications'
-    leftCheckbox={<Checkbox />} />
+    primaryText={props.text}
+    leftCheckbox={<Checkbox checked={props.done} />} />
   <Divider />
 </div>
 
 export default Item
 
-Item.propTypes = {}
+Item.propTypes = {
+  _id: PropTypes.string,
+  text: PropTypes.string,
+  done: PropTypes.bool
+}
