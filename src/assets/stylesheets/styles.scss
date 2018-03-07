@@ -22,3 +22,19 @@ $secondary-main: #00c853;
 .centered {
   margin: auto;
 }
+
+.done {
+  text-decoration: line-through;
+}
+
+.input-editing {
+  width: 100%;
+}
+
+.todo {
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -18,6 +18,8 @@ const Item = props => <div>
     </IconButton>}
     className='todo-item'
     primaryText={<RIEInput
+      className={`todo ${props.done ? 'done' : null}`}
+      classEditing='input-editing'
       ref={props.getRef}
       value={props.text}
       change={({text}) => props.onTextChange(props._id, text)}
