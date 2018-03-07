@@ -11,11 +11,20 @@ import { RIEInput } from 'riek'
 
 const Item = props => <div>
   <ListItem
-    rightIconButton={<IconButton
-      onClick={() => props.onRemove(props._id)}
-      touch>
-      <FontIcon className='material-icons'>delete</FontIcon>
-    </IconButton>}
+    rightIconButton={<div>
+      <IconButton
+        onClick={() => props.onMoreClick(props._id)}
+        touch
+      >
+        <FontIcon className='material-icons'>more</FontIcon>
+      </IconButton>
+      <IconButton
+        onClick={() => props.onRemove(props._id)}
+        touch
+      >
+        <FontIcon className='material-icons'>delete</FontIcon>
+      </IconButton>
+    </div>}
     className='todo-item'
     primaryText={<RIEInput
       className={`todo ${props.done ? 'done' : null}`}
@@ -38,5 +47,6 @@ Item.propTypes = {
   onCheck: PropTypes.func.isRequired,
   onTextChange: PropTypes.func.isRequired,
   ref: PropTypes.func,
-  onRemove: PropTypes.func.isRequired
+  onRemove: PropTypes.func.isRequired,
+  onMoreClick: PropTypes.func.isRequired
 }

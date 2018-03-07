@@ -24,7 +24,9 @@ class Container extends Component {
         text: 'meeee!!!',
         done: true
       }
-    ]
+    ],
+    isDetailsOpen: false,
+    selectedItem: {}
   }
 
   // NOTE: When adding new items
@@ -63,6 +65,16 @@ class Container extends Component {
 
   // // //
 
+  onMoreClick = _id => {
+    const selectedItem = this.state.todos.find(todo => todo._id === _id)
+    this.setState({
+      isDetailsOpen: true,
+      selectedItem
+    })
+  }
+
+  onDetailsClose = () => this.setState({ isDetailsOpen: false })
+
   onRemove = (_id) => this.setState({
     todos: this.state.todos.filter(todo => todo._id !== _id)
   })
@@ -92,6 +104,10 @@ class Container extends Component {
   render () {
     return (
       <View
+        onDetailsClose={this.onDetailsClose}
+        selectedItem={this.state.selectedItem}
+        isDetailsOpen={this.state.isDetailsOpen}
+        onMoreClick={this.onMoreClick}
         onRemove={this.onRemove}
         getFirstInputRef={this.getFirstInputRef}
         onAddButtonClick={this.onAddButtonClick}

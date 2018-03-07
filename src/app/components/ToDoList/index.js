@@ -16,6 +16,7 @@ const ToDoList = props => <div id='list-container' className='centered'>
       onTextChange={props.onTextChange}
       getRef={props.getFirstInputRef(index)}
       onRemove={props.onRemove}
+      onMoreClick={props.onMoreClick}
     />)}
   </List>
 </div>
@@ -27,5 +28,6 @@ ToDoList.propTypes = {
   onCheck: PropTypes.func.isRequired,
   onTextChange: PropTypes.func.isRequired,
   getFirstInputRef: PropTypes.func.isRequired,
-  onRemove: PropTypes.func.isRequired
+  onRemove: PropTypes.func.isRequired,
+  onMoreClick: PropTypes.func.isRequired
 }
