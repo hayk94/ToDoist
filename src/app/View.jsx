@@ -10,7 +10,7 @@ import AddButton from './components/AddButton'
 const View = props => <div id='main-container' className='centered'>
   <AppBar
     title='ToDoist'
-    iconElementLeft={<FontIcon className='material-icons'>check_circle</FontIcon>}
+    iconElementLeft={<FontIcon id='logo' className='material-icons'>check_circle</FontIcon>}
   />
   <List
     list={props.todos}

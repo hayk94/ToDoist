@@ -10,9 +10,9 @@ const muiTheme = getMuiTheme({
     primary1Color: '#3f50b5',
     primary2Color: '#757ce8',
     primary3Color: '#002884',
-    accent1Color: '#f44336',
-    accent2Color: '#ff7961',
-    accent3Color: 'ba000d',
+    accent1Color: '#00c853',
+    accent2Color: '#5efc82',
+    accent3Color: '#009624',
     textColor: '#000',
     alternateTextColor: '#fff'
   }
