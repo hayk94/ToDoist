@@ -12,7 +12,7 @@ import { RIEInput } from 'riek'
 const Item = props => <div>
   <ListItem
     rightIconButton={<IconButton
-      onClick={() => props.onRemove(props._id)}
+      onClick={() => props.onRemove(props.id)}
       touch>
       <FontIcon className='material-icons'>delete</FontIcon>
     </IconButton>}
@@ -22,17 +22,17 @@ const Item = props => <div>
       classEditing='input-editing'
       ref={props.getRef}
       value={props.text}
-      change={({text}) => props.onTextChange(props._id, text)}
+      change={({text}) => props.onTextChange(props.id, text)}
       propName='text'
     />}
-    leftCheckbox={<Checkbox checked={props.done} onCheck={(event, checked) => props.onCheck(props._id, checked)} />} />
+    leftCheckbox={<Checkbox checked={props.done} onCheck={(event, checked) => props.onCheck(props.id, checked)} />} />
   <Divider />
 </div>
 
 export default Item
 
 Item.propTypes = {
-  _id: PropTypes.string,
+  id: PropTypes.string,
   text: PropTypes.string,
   done: PropTypes.bool,
   onCheck: PropTypes.func.isRequired,

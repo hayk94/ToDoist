@@ -8,8 +8,8 @@ import Item from './Item'
 const ToDoList = props => <div id='list-container' className='centered'>
   <List>
     {props.list.map((item, index) => <Item
-      _id={item._id}
-      key={item._id}
+      id={item.id}
+      key={item.id}
       text={item.text}
       done={item.done}
       onCheck={props.onCheck}
